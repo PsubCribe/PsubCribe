@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Encoder/Decoder</title>
+	<script>
+		function encodeText() {
+			var input = document.getElementById("input").value;
+			var output = "";
+			for (var i = 0; i < input.length; i++) {
+				output += String.fromCharCode(input.charCodeAt(i) + 1);
+			}
+			document.getElementById("output").innerHTML = output;
+		}
+		
+		function decodeText() {
+			var input = document.getElementById("input").value;
+			var output = "";
+			for (var i = 0; i < input.length; i++) {
+				output += String.fromCharCode(input.charCodeAt(i) - 1);
+			}
+			document.getElementById("output").innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<h1>Text Encoder/Decoder</h1>
+	<label for="input">Input Text:</label>
+	<input type="text" id="input">
+	<button onclick="encodeText()">Encode</button>
+	<button onclick="decodeText()">Decode</button>
+	<p>Output Text: <span id="output"></span></p>
+</body>
+</html>
